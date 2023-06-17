@@ -2,11 +2,13 @@ package com.galinaarbatskaya.PP_314.spring_security.controller;
 
 import com.galinaarbatskaya.PP_314.spring_security.models.User;
 import com.galinaarbatskaya.PP_314.spring_security.service.UserService;
-import jakarta.validation.Valid;
+
 import org.springframework.security.core.annotation.AuthenticationPrincipal;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
+
+import javax.validation.Valid;
 
 @Controller
 @RequestMapping("/admin")
