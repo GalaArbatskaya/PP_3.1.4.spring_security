@@ -24,10 +24,10 @@ public class Role implements GrantedAuthority {
         return role;
     }
 
-    public Role() {
-
+    public Role() {}
+    public String getName() {
+        return role;
     }
-
     public Long getId() {
         return id;
     }
