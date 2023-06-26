@@ -157,11 +157,6 @@ public class User implements UserDetails {
         }
         this.roles.add(role);
     }
-//    public String getAllRolesAsString() {
-//        return getRoles().toString().replaceAll("\\[", "")
-//                .replaceAll("\\]","");
-//    }
-
     @Override
     public String toString() {
         return "User{" +

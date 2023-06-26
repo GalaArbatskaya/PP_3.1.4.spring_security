@@ -12,7 +12,6 @@
   <!-- Bootstrap CSS -->
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
         integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-
   <title>User page</title>
 </head>
 <body>
@@ -23,9 +22,7 @@
       <div class="container-fluid justify-content-between align-items-center">
         <div class="d-flex align-items-center">
           <div sec:authorize="isAuthenticated()" th:align="center" th:object="${user}">
-            <b><span th:text="${user.getEmail()}">Email</span></b>
-            with roles:
-            <i><span th:text="${user.getAllRolesAsString()}">Roles</span></i>
+            <i><span  th:text="'with roles: ' + ${user.getRoles}"></span></i>
           </div>
         </div>
         <div>
@@ -78,7 +75,12 @@
               <td><p th:text="${user.getLastName()}"></p></td>
               <td><p th:text="${user.getAge()}"></td>
               <td><p th:text="${user.getEmail()}"></p></td>
-              <td><p th:text="${user.getAllRolesAsString()}"></p></td>
+              <td>
+                <div th:each="r : ${user.getRoles()}">
+                  <p id="role_field" th:text="${r.name}"></p>
+                </div>
+              </td>
+
             </tr>
             </tbody>
           </table>

@@ -68,7 +68,6 @@
                                     <th>Email</th>
                                     <th>Role</th>
                                     <th>Edit</th>
-                                    <th>Delete</th>
                                 </tr>
                                 </thead>
                                 <tbody>
@@ -78,7 +77,6 @@
                                     <td th:text="${user.getLastName()}"/>
                                     <td th:text="${user.getAge}"/>
                                     <td th:text="${user.getEmail()}"/>
-<!--                                    <td th:text="${user.getAllRolesAsString()}"/>-->
                                     <td>
                                         <button class="btn btn-info" data-bs-toggle="modal"
                                                 th:data-bs-target="${'#eMdl'+ user.getId}"
@@ -143,8 +141,6 @@
                                                                     <option th:each="role : ${allRoles}"
                                                                             th:value="${role.getId()}"
                                                                             th:text="${role.getName()}">Role name
-<!--                                                                            th:text="${role.getAuthorityWithoutPrefix()}">-->
-<!--                                                                            th:text="${user.getAllRolesAsString()}">-->
                                                                     </option>
                                                                 </select>
                                                             </div>
@@ -310,7 +306,7 @@
                             <td th:text="${user.getLastName}"></td>
                             <td th:text="${user.getAge}"></td>
                             <td th:text="${user.getEmail}"></td>
-                            <td th:text="${user.getAllRolesAsString()}"></td>
+                            <td th:text="${user.getRoles}"></td>
                         </tr>
                         </tbody>
                     </table>
